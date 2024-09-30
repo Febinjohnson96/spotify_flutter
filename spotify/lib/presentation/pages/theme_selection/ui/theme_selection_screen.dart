@@ -1,11 +1,13 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gap/gap.dart';
 import 'package:spotify/core/configs/theme/app_typography.dart';
 import 'package:spotify/gen/assets.gen.dart';
+import 'package:spotify/presentation/pages/theme_selection/bloc/theme_selection_cubit.dart';
 import 'package:spotify/presentation/widgets/spotify_button.dart';
 
 class ThemeSelectionScreen extends StatelessWidget {
@@ -47,34 +49,40 @@ class ThemeSelectionScreen extends StatelessWidget {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: [
-                      ClipOval(
-                        child: BackdropFilter(
-                          filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
-                          child: Container(
-                            height: 73.h,
-                            width: 73.w,
-                            decoration: BoxDecoration(
-                                color: const Color(0xFF30393c).withOpacity(0.5),
-                                shape: BoxShape.circle),
-                            child: Center(
-                              child: SvgPicture.asset(
-                                  Assets.vectors.themeSelection.moon),
+                      GestureDetector(
+                        onTap: () => context.read<ThemeSelectionCubit>().updateTheme(ThemeMode.dark),
+                        child: ClipOval(
+                          child: BackdropFilter(
+                            filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+                            child: Container(
+                              height: 73.h,
+                              width: 73.w,
+                              decoration: BoxDecoration(
+                                  color: const Color(0xFF30393c).withOpacity(0.5),
+                                  shape: BoxShape.circle),
+                              child: Center(
+                                child: SvgPicture.asset(
+                                    Assets.vectors.themeSelection.moon),
+                              ),
                             ),
                           ),
                         ),
                       ),
-                      ClipOval(
-                        child: BackdropFilter(
-                          filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
-                          child: Container(
-                            height: 73.h,
-                            width: 73.w,
-                            decoration: BoxDecoration(
-                                color: const Color(0xFF30393c).withOpacity(0.5),
-                                shape: BoxShape.circle),
-                            child: Center(
-                              child: SvgPicture.asset(
-                                  Assets.vectors.themeSelection.sun),
+                      GestureDetector(
+                        onTap: () => context.read<ThemeSelectionCubit>().updateTheme(ThemeMode.light),
+                        child: ClipOval(
+                          child: BackdropFilter(
+                            filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
+                            child: Container(
+                              height: 73.h,
+                              width: 73.w,
+                              decoration: BoxDecoration(
+                                  color: const Color(0xFF30393c).withOpacity(0.5),
+                                  shape: BoxShape.circle),
+                              child: Center(
+                                child: SvgPicture.asset(
+                                    Assets.vectors.themeSelection.sun),
+                              ),
                             ),
                           ),
                         ),
