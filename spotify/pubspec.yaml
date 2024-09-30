@@ -41,6 +41,9 @@ dependencies:
   go_router: ^14.2.3
   logger: ^2.4.0
   gap: ^3.0.1
+  flutter_bloc: ^8.1.6
+  hydrated_bloc: ^9.1.5
+  path_provider: ^2.1.4
 
 dev_dependencies:
   flutter_test:
@@ -70,6 +73,8 @@ flutter:
   assets:
     - assets/images/get started/
     - assets/vectors/
+    - assets/images/theme_selection/
+    - assets/vectors/theme_selection/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

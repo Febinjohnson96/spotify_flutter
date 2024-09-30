@@ -6,14 +6,15 @@ import 'package:spotify/gen/fonts.gen.dart';
 class SpotifyButton extends StatelessWidget {
   const SpotifyButton({
     super.key,
-    this.btntitle,
+    this.btntitle, this.onTap,
   });
   final String? btntitle;
+  final VoidCallback? onTap;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () => onTap?.call(),
       child: Container(
         height: 70.h,
         width: 329.w,
