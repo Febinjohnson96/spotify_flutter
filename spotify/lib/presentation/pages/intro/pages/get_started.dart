@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gap/gap.dart';
+import 'package:go_router/go_router.dart';
+import 'package:spotify/core/configs/routes/route_names.dart';
 import 'package:spotify/gen/assets.gen.dart';
 import 'package:spotify/gen/fonts.gen.dart';
 import 'package:spotify/presentation/widgets/spotify_button.dart';
@@ -58,8 +60,9 @@ class GetStartedScreen extends StatelessWidget {
                   ),
                 ),
                 Gap(40.h),
-                const SpotifyButton(
+                SpotifyButton(
                   btntitle: 'Get Started',
+                  onTap: () => context.go(RouteNames.themeSelection),
                 ),
                 Gap(40.h),
               ],

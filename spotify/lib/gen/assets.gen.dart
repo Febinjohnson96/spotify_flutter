@@ -15,6 +15,10 @@ class $AssetsImagesGen {
   /// Directory path: assets/images/get started
   $AssetsImagesGetStartedGen get getStarted =>
       const $AssetsImagesGetStartedGen();
+
+  /// Directory path: assets/images/theme_selection
+  $AssetsImagesThemeSelectionGen get themeSelection =>
+      const $AssetsImagesThemeSelectionGen();
 }
 
 class $AssetsVectorsGen {
@@ -22,6 +26,10 @@ class $AssetsVectorsGen {
 
   /// File path: assets/vectors/spotify_logo.svg
   String get spotifyLogo => 'assets/vectors/spotify_logo.svg';
+
+  /// Directory path: assets/vectors/theme_selection
+  $AssetsVectorsThemeSelectionGen get themeSelection =>
+      const $AssetsVectorsThemeSelectionGen();
 
   /// List of all assets
   List<String> get values => [spotifyLogo];
@@ -36,6 +44,39 @@ class $AssetsImagesGetStartedGen {
 
   /// List of all assets
   List<AssetGenImage> get values => [getstarted];
+}
+
+class $AssetsImagesThemeSelectionGen {
+  const $AssetsImagesThemeSelectionGen();
+
+  /// File path: assets/images/theme_selection/theme_selection_bg.png
+  AssetGenImage get themeSelectionBg => const AssetGenImage(
+      'assets/images/theme_selection/theme_selection_bg.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [themeSelectionBg];
+}
+
+class $AssetsVectorsThemeSelectionGen {
+  const $AssetsVectorsThemeSelectionGen();
+
+  /// File path: assets/vectors/theme_selection/Moon.svg
+  String get moon => 'assets/vectors/theme_selection/Moon.svg';
+
+  /// File path: assets/vectors/theme_selection/Moon2.svg
+  String get moon2 => 'assets/vectors/theme_selection/Moon2.svg';
+
+  /// File path: assets/vectors/theme_selection/Sun.svg
+  String get sun => 'assets/vectors/theme_selection/Sun.svg';
+
+  /// File path: assets/vectors/theme_selection/eclipse1.svg
+  String get eclipse1 => 'assets/vectors/theme_selection/eclipse1.svg';
+
+  /// File path: assets/vectors/theme_selection/eclipse2.svg
+  String get eclipse2 => 'assets/vectors/theme_selection/eclipse2.svg';
+
+  /// List of all assets
+  List<String> get values => [moon, moon2, sun, eclipse1, eclipse2];
 }
 
 class Assets {
